@@ -1,0 +1,26 @@
+name: CI
+
+jobs:
+
+  build
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout repository
+      uses:actions.checkout@v5
+
+    -name: Set up Python 3.11
+     uses:actions/setuo-pythonv6
+     with:
+       pytho-version: "3.11"
+
+    - name Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -o pip install -r requirements.txt
+
+    -name: Test with Python
+        run: |
+        python3 -m pytest --cov=inflammation.models tests/test_models.py
