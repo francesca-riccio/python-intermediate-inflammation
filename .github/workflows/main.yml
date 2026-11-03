@@ -16,7 +16,7 @@ jobs:
     -name: Set up Python 3.11
      uses:actions/setuo-pythonv6
      with:
-       pytho-version: "3.11"
+       python-version: "3.11"
 
     - name Install Python dependencies
       run: |
