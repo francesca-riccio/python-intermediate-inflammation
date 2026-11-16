@@ -1,18 +1,81 @@
-# Introduction
+# Inflam
+![Continuous Integration build in GitHub Actions](https://github.com/<your_github_username>/python-intermediate-inflammation/actions/workflows/main.yml/badge.svg?branch=main)
+Inflam is a data management system written in Python that manages trial data used in clinical inflammation studies.
 
-This is a template software project repository used by the [Intermediate Research Software Development Skills In Python](https://github.com/carpentries-incubator/python-intermediate-development).
+## Main features
 
-## Purpose
+Here are some key features of Inflam:
 
-This repository is intended to be used as an example software project which is copied by learners of the 
-[Intermediate Research Software Development Skills In Python](https://github.com/carpentries-incubator/python-intermediate-development) course.
+- Provide basic statistical analyses over clinical trial data.
 
-This software project is not finished, does not contain a LICENCE file, the code is currently failing to run and contains some code style issues. 
-It is used as a starting point for the course - issues will be fixed and code will be added in a number of places during the course by learners in their own copies of the repository, as course topics are introduced.
+- Work with trial data in Comma-Separated Value (CSV) format.
 
-## Tests
+- Support inflammation data in JSON format.
 
-Several tests have been implemented already, some of which are currently failing.
-These failing tests set out the requirements for the additional code to be implemented during the workshop.
+- Generate plots of trial data.
 
-The tests should be run using `pytest`, which will be introduced during the workshop.
+- Extend analytical functions and views using a Model-View-Controller (MVC) architecture.
+
+Prerequisites
+
+Inflam requires Python 3 and the following packages:
+
+- [NumPy](https://www.numpy.org/) - makes use of NumPy's statistical functions
+- [Matplotlib](https://matplotlib.org/stable/index.html) - uses Matplotlib to generate statistical plots.
+
+The following packages are required for testing:
+
+- [pytest](https://docs.pytest.org/en/stable/) - Inflam's unit tests are written using pytest
+- [pytest-cov](https://pypi.org/project/pytest-cov/) - Adds test coverage stats to unit testing
+
+## Installation
+
+Clone the repository:
+
+git clone git@github.com:francesca-riccio/python-intermediate-inflammation.git
+cd python-intermediate-inflammation
+
+Create and activate a Python virtual environment:
+
+python3 -m venv venv
+source venv/bin/activate
+
+Install the project and its dependencies:
+
+python3 -m pip install -e .
+
+Basic usage
+
+Run the application with a CSV file:
+
+python3 inflammation-analysis.py data/inflammation-01.csv
+
+Run the full data analysis:
+
+python3 inflammation-analysis.py --full-data-analysis data/inflammation-01.csv
+
+Display the command-line options:
+
+python3 inflammation-analysis.py --help
+
+Testing
+
+Run the test suite using pytest:
+
+python3 -m pytest tests/ -v
+
+Generate a test coverage report:
+
+python3 -m pytest tests/ --cov=inflammation
+
+
+
+## Contributing
+
+Contributions, bug reports and suggestions are welcome.
+
+Please create a feature branch, add appropriate tests and submit a Pull Request for review.
+
+## Licence
+
+See LICENCE.md for licensing information.
